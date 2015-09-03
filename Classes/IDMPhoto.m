@@ -141,10 +141,10 @@ caption = _caption;
                                                       timeoutInterval:0];
             
             AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-            op.responseSerializer = [AFImageResponseSerializer serializer];
+            //op.responseSerializer = [AFImageResponseSerializer serializer];
 
             [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-                UIImage *image = responseObject;
+                UIImage *image = [UIImage imageWithData:responseObject];
                 self.underlyingImage = image;
                 [self performSelectorOnMainThread:@selector(imageLoadingComplete) withObject:nil waitUntilDone:NO];
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) { }];
