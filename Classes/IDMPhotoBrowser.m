@@ -553,7 +553,7 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
 
 - (void)viewDidLoad {
     // View
-	self.view.backgroundColor = [UIColor colorWithWhite:(_useWhiteBackgroundColor ? 1 : 0) alpha:1];
+    self.view.backgroundColor = [UIColor clearColor];//[UIColor colorWithWhite:(_useWhiteBackgroundColor ? 1 : 0) alpha:1];
     
     self.view.clipsToBounds = YES;
     
